@@ -1,0 +1,16 @@
+<!--OrderNotifier#shipped
+
+<%= @greeting %>, find me in app/views/app/views/order_notifier/shipped.text.erb
+-->
+
+Dear <%= @order.name %>
+
+Pragmaticストアでのご注文、誠にありがとうございます。
+
+あなたが注文され以下の品目を発送いたしました。
+
+<%= render @order.line_items %>
+
+1週間以内に到着しない場合は、お手数ですが以下までご連絡いただけますでしょうか。
+
+  TEL：0120-111-1111

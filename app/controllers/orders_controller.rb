@@ -4,7 +4,9 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    #@orders = Order.all
+    #paginate()を呼び出すように修正
+    @orders = Order.paginate :page=>params[:page], :order=>'id desc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,6 +56,8 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
+        OrderNotifier.recieved(@order).deliver
         #format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.html { redirect_to store_url, notice: 'ご注文ありがとうございます。' }
         format.json { render json: @order, status: :created, location: @order }
