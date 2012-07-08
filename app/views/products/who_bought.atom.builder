@@ -16,7 +16,7 @@ atom_feed do |feed|
             xhtml.th 'Quantity'
             xhtml.th 'Total Price'
           end
-          order.line_item.each do |item|
+          order.line_items.each do |item|
             xhtml.tr do
               xhtml.td item.product.title
               xhtml.td item.quantity

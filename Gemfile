@@ -1,13 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.0'
 
-gem 'rake', '0.8.7'
+#gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -32,9 +33,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', '< 0.8.3', :require => false
-end
+#group :test do
+#  # Pretty printed test output
+#  gem 'turn', '< 0.8.3', :require => false
+#end
 
 gem 'will_paginate', '~> 3.0'
